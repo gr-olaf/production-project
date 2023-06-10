@@ -23,6 +23,17 @@
 		"quotes": ["error", "single"],
 		"semi": ["error", "always"],
 		"@typescript-eslint/ban-ts-comment": "off",
-		"i18next/no-literal-string": ["error", { "markupOnly": true }]
-	}
+		"i18next/no-literal-string": [
+			"error",
+			{ "markupOnly": true, "ignoreAttribute": ["data-testid"] }
+		]
+	},
+	"overrides": [
+		{
+			"files": ["**/src/**/*.test.{ts,tsx}"],
+			"rules": {
+				"i18next/no-literal-string": "off"
+			}
+		}
+	]
 }

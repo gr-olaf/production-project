@@ -1,8 +1,4 @@
 import 'app/styles/index.scss';
-import { FC } from 'react';
+import { Story } from '@storybook/react';
 
-const StyleDecorator: FC = ({ children }) => {
-	return <div>{children}</div>;
-};
-
-export default StyleDecorator;
+export const StyleDecorator = (story: () => Story) => story();

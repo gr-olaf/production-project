@@ -1,13 +1,6 @@
-import 'app/styles/index.scss';
-import { ReactNode } from 'react';
+import { Story } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';
 
-interface RouterDecoratorProps {
-	children?: ReactNode;
-}
-
-const RouterDecorator = ({ children }: RouterDecoratorProps) => {
-	return <BrowserRouter>{children}</BrowserRouter>;
-};
-
-export default RouterDecorator;
+export const RouterDecorator = (story: () => Story) => (
+	<BrowserRouter>{story()}</BrowserRouter>
+);

@@ -9,8 +9,7 @@
 		"plugin:@typescript-eslint/recommended",
 		"plugin:react/recommended",
 		"plugin:react/jsx-runtime",
-		"plugin:i18next/recommended",
-		"plugin:storybook/recommended"
+		"plugin:i18next/recommended"
 	],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {

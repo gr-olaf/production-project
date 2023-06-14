@@ -57,6 +57,7 @@
 		"eslint": "^8.10.0",
 		"eslint-plugin-i18next": "^5.1.2",
 		"eslint-plugin-react": "^7.29.2",
+		"eslint-plugin-react-hooks": "^4.3.0",
 		"eslint-plugin-storybook": "^0.6.12",
 		"html-webpack-plugin": "^5.5.0",
 		"identity-obj-proxy": "^3.0.0",

@@ -17,7 +17,7 @@ module.exports = {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
 	},
-	plugins: ['@typescript-eslint', 'react', 'i18next'],
+	plugins: ['@typescript-eslint', 'react', 'i18next', 'react-hooks'],
 	rules: {
 		indent: ['error', 'tab'],
 		'linebreak-style': [
@@ -34,6 +34,8 @@ module.exports = {
 				ignoreAttribute: ['data-testid', 'to'],
 			},
 		],
+		'react-hooks/rules-of-hooks': 'error',
+		'react-hooks/exhaustive-deps': 'error',
 	},
 	overrides: [
 		{

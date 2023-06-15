@@ -27,16 +27,6 @@
 	transform: scale(0.5);
 }
 
-.content.light {
-	color: var(--inverted-primary-color);
-	background-color: var(--inverted-bg-color);
-}
-
-.content.dark {
-	color: var(--primary-color);
-	background-color: var(--bg-color);
-}
-
 .opened {
 	opacity: 1;
 	pointer-events: auto;

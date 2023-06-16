@@ -12,6 +12,7 @@
 	outline: none;
 	color: transparent;
 	text-shadow: 0 0 0 var(--primary-color);
+
 	&:focus {
 		border: none;
 	}
@@ -36,6 +37,7 @@
 	to {
 		border-color: transparent;
 	}
+
 	50% {
 		border-color: var(--primary-color);
 	}

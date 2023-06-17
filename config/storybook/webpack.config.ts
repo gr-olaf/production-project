@@ -10,7 +10,9 @@ export default ({ config }: { config: webpack.Configuration }) => {
 		entry: '',
 		src: path.resolve(__dirname, '..', '..', 'src'),
 	};
-	config.resolve?.modules?.push(paths.src);
+	if (config.resolve?.modules) {
+		config.resolve.modules = [paths.src, 'node_modules'];
+	}
 	config.resolve?.extensions?.push('.ts', '.tsx');
 	if (config.module?.rules) {
 		config.module.rules = config.module.rules.map(
@@ -28,6 +30,11 @@ export default ({ config }: { config: webpack.Configuration }) => {
 	});
 
 	config.module?.rules?.push(buildCssLoaders(true));
+	config.plugins?.push(
+		new webpack.DefinePlugin({
+			__IS_DEV__: true,
+		})
+	);
 
 	return config;
 };

@@ -8,5 +8,8 @@
 	"Короткий язык": "En",
 	"Войти": "Login",
 	"Имя пользователя": "Username",
-	"Пароль": "Password"
+	"Пароль": "Password",
+	"Авторизация": "Authorization",
+	"Неверный логин или пароль": "Incorrect login or password",
+	"Выйти": "Logout"
 }

@@ -5,11 +5,12 @@ import type {
 	ReduxStoreWithManager,
 	StateSchemaKey,
 } from './config/StateSchema';
-
+import type { AppDispatch } from './config/store';
 export {
 	StoreProvider,
 	createReduxStore,
 	StateSchema,
 	ReduxStoreWithManager,
 	StateSchemaKey,
+	AppDispatch,
 };

@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 module.exports = {
 	env: {
 		browser: true,
@@ -37,10 +36,8 @@ module.exports = {
 		'react-hooks/rules-of-hooks': 'error',
 		'react-hooks/exhaustive-deps': 'error',
 		'react/display-name': 'off',
-	},
-	global: {
-		__IS_DEV__: true,
-		__API__: true,
+		'no-mixed-spaces-and-tabs': 'off',
+		'no-undef': 'off',
 	},
 	overrides: [
 		{

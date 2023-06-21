@@ -6,8 +6,8 @@ import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { memo } from 'react';
 
 interface SidebarItemProps {
-	item?: SidebarItemType;
-	collapsed?: boolean;
+	item: SidebarItemType;
+	collapsed: boolean;
 }
 
 export const SidebarItem = memo((props: SidebarItemProps) => {

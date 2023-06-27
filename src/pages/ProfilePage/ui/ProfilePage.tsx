@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
 	DynamicModuleLoader,
-	ReducerList,
+	ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {
 	ProfileCard,
@@ -28,7 +28,7 @@ interface ProfilePageProps {
 	className?: string;
 }
 
-const initialReducers: ReducerList = {
+const initialReducers: ReducersList = {
 	profile: profileReducer,
 };
 

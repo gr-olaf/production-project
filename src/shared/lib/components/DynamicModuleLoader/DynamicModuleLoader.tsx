@@ -6,12 +6,12 @@ import {
 import { FC, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 
-export type ReducerList = {
+export type ReducersList = {
 	[name in StateSchemaKey]?: Reducer;
 };
 
 interface DynamicModuleLoaderProps {
-	reducers: ReducerList;
+	reducers: ReducersList;
 	removeAfrerUnmount?: boolean;
 }
 

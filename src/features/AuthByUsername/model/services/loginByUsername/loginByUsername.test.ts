@@ -4,7 +4,7 @@ import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
 describe('loginByUsername.test', () => {
 	test('success login', async () => {
-		const userValue = { username: 'admin', id: 1 };
+		const userValue = { username: 'admin', id: '1' };
 		const thunk = new TestAsyncThunk(loginByUsername);
 		thunk.api.post.mockReturnValue(Promise.resolve({ data: userValue }));
 		const result = await thunk.callThunk({
@@ -21,7 +21,7 @@ describe('loginByUsername.test', () => {
 	});
 
 	test('error login', async () => {
-		const userValue = { username: 'admin', id: 1 };
+		const userValue = { username: 'admin', id: '1' };
 		const thunk = new TestAsyncThunk(loginByUsername);
 		thunk.api.post.mockReturnValue(Promise.resolve({ status: 403 }));
 		const result = await thunk.callThunk({

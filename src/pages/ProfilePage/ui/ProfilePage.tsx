@@ -1,8 +1,5 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import {
-	DynamicModuleLoader,
-	ReducersList,
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
 import {
 	ProfileCard,
 	ValidateProfileError,
@@ -15,14 +12,19 @@ import {
 	profileActions,
 	profileReducer,
 } from 'entities/Profile';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useCallback, useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { classNames } from 'shared/lib/classNames/classNames';
+import {
+	DynamicModuleLoader,
+	ReducersList,
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 interface ProfilePageProps {
 	className?: string;
@@ -40,6 +42,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 	const error = useSelector(getProfileError);
 	const readOnly = useSelector(getProfileReadOnly);
 	const validateErrors = useSelector(getProfileValidateErrors);
+	const { id } = useParams<{ id: string }>();
 
 	const validateErrorsTranslates = {
 		[ValidateProfileError.INCORRECT_USER_DATA]: t('Имя и фамилия обязательны'),
@@ -49,11 +52,11 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 		[ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
 	};
 
-	useEffect(() => {
-		if (__PROJECT__ !== 'storybook') {
-			dispatch(fetchProfileData());
+	useInitialEffect(() => {
+		if (id) {
+			dispatch(fetchProfileData(id));
 		}
-	}, [dispatch]);
+	});
 
 	const onChangeFirstname = useCallback(
 		(value?: string) => {

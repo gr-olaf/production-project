@@ -30,6 +30,7 @@ Primary.args = {
 		currency: Currency.RUB,
 		country: Country.Russia,
 	},
+	readOnly: true,
 };
 
 export const WithError = Template.bind({});

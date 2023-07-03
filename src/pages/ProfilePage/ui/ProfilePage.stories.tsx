@@ -33,6 +33,7 @@ Normal.decorators = [
 				currency: Currency.RUB,
 				country: Country.Russia,
 			},
+			readonly: true,
 		},
 	}),
 ];
@@ -53,6 +54,7 @@ Dark.decorators = [
 				currency: Currency.RUB,
 				country: Country.Russia,
 			},
+			readonly: true,
 		},
 	}),
 ];

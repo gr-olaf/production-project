@@ -1,6 +1,5 @@
-import { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
-import type { Article } from './model/types/article';
-import type { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
-import { getArticleDetailsData } from './model/selectors/articleDetails';
-
-export { ArticleDetails, Article, ArticleDetailsSchema, getArticleDetailsData };
+export { ArticleList } from './ui/ArticleList/ArticleList';
+export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
+export { Article, ArticleView } from './model/types/article';
+export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
+export { getArticleDetailsData } from './model/selectors/articleDetails';

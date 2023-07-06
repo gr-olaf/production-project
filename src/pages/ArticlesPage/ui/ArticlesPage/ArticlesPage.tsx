@@ -4,7 +4,6 @@ import {
 	ArticleViewSelector,
 } from 'entities/Article';
 import { FC, memo, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
@@ -19,8 +18,8 @@ import {
 	getArticlesPageIsLoading,
 	getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { fetchNextArticlesList } from '../../model/services/fetchNextArticlesList/fetchNextArticlesList';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import {
 	articlesPageActions,
 	articlesPageReducer,
@@ -38,7 +37,6 @@ const initialReducers: ReducersList = {
 
 const ArticlesPage: FC<ArticlesPageProps> = (props) => {
 	const { className } = props;
-	const { t } = useTranslation('article');
 	const dispatch = useAppDispatch();
 	const articles = useSelector(getArticles.selectAll);
 	const isLoading = useSelector(getArticlesPageIsLoading);
@@ -57,15 +55,14 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
 	}, [dispatch]);
 
 	useInitialEffect(() => {
-		dispatch(articlesPageActions.initState());
-		dispatch(fetchArticlesList({ page: 1 }));
-	}, view);
+		dispatch(initArticlesPage());
+	});
 
 	return (
-		<DynamicModuleLoader reducers={initialReducers}>
+		<DynamicModuleLoader reducers={initialReducers} removeAfrerUnmount={false}>
 			<Page
 				onScrollEnd={onLoadNextPart}
-				className={classNames(cls.articlesPage, {}, [className])}
+				className={classNames(cls.ArticlesPage, {}, [className])}
 			>
 				<ArticleViewSelector view={view} onViewClick={onChangeView} />
 				<ArticleList isLoading={isLoading} view={view} articles={articles} />

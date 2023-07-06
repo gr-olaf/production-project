@@ -7,7 +7,7 @@ import cls from './ArticleList.module.scss';
 
 interface ArticleListProps {
 	className?: string;
-	articles?: Article[];
+	articles: Article[];
 	isLoading?: boolean;
 	view?: ArticleView;
 }
@@ -25,13 +25,9 @@ export const ArticleList = memo((props: ArticleListProps) => {
 		return <ArticleListItem key={article.id} article={article} view={view} />;
 	};
 
-	if (articles?.length === 0) {
-		return null;
-	}
-
 	return (
-		<div className={classNames('', {}, [className, cls[view]])}>
-			{articles?.map(renderArticle)}
+		<div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+			{articles.length > 0 ? articles.map(renderArticle) : null}
 			{isLoading && getSkeletons(view)}
 		</div>
 	);

@@ -83,7 +83,7 @@ export const Input = memo((props: InputProps) => {
 					onFocus={onFocus}
 					onBlur={onBlur}
 					onSelect={onSelect}
-					autoFocus
+					autoFocus={autoFocus}
 					{...otherProps}
 				/>
 				{isCaretVisible && (

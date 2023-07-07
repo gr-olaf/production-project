@@ -23,7 +23,7 @@ import {
 	getArticleComments,
 } from '../../model/slice/articleDetailsCommentsSlice';
 import cls from './ArticleDetailsPage.module.scss';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 
 interface ArticleDetailsPageProps {
 	className?: string;

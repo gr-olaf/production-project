@@ -45,7 +45,7 @@ export const Page = (props: PageProps) => {
 				position: e.currentTarget.scrollTop,
 			})
 		);
-	}, 800);
+	}, 500);
 
 	return (
 		<section
@@ -54,7 +54,7 @@ export const Page = (props: PageProps) => {
 			onScroll={onScroll}
 		>
 			{children}
-			<div ref={triggerRef} />
+			{onScrollEnd ? <div ref={triggerRef} className={cls.trigger} /> : null}
 		</section>
 	);
 };

@@ -12,7 +12,7 @@ export const fetchNextArticlesList = createAsyncThunk<
 	void,
 	void,
 	ThunkConfig<string>
->('articles/fetchNextArticlesList', async (_, thunkAPI) => {
+>('articlesPage/fetchNextArticlesList', async (_, thunkAPI) => {
 	const { getState, dispatch } = thunkAPI;
 
 	const isLoading = getArticlesPageIsLoading(getState());

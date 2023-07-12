@@ -12,5 +12,14 @@
 	"Авторизация": "Authorization",
 	"Неверный логин или пароль": "Incorrect login or password",
 	"Выйти": "Logout",
-	"Страница профиля": "Profile page"
+	"Страница профиля": "Profile page",
+	"Комментарии отсутствуют": "There are no comments",
+	"Укажите страну": "Choose country",
+	"Укажите валюту": "Choose currency",
+	"Введите текст комментария": "Enter text of the comment",
+	"Отправить": "Send",
+	"Grolaf App": "Grolaf App",
+	"Создать статью": "Create article",
+	"Обновить страницу": "Refresh page",
+	"Статьи": "Articles"
 }

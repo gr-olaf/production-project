@@ -6,7 +6,7 @@ import {
 	ArticleView,
 	ArticleViewSelector,
 } from 'entities/Article';
-import { memo, useCallback, useMemo } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -15,7 +15,6 @@ import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
 import { SortOrder } from 'shared/types';
 import { Card } from 'shared/ui/Card/Card';
 import { Input } from 'shared/ui/Input/Input';
-import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
 import {
 	getArticlesPageOrder,
 	getArticlesPageSearch,
@@ -33,7 +32,7 @@ interface ArticlesPageFiltersProps {
 
 export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
 	const { className } = props;
-	const { t } = useTranslation();
+	const { t } = useTranslation('article');
 	const dispatch = useAppDispatch();
 	const view = useSelector(getArticlesPageView);
 	const sort = useSelector(getArticlesPageSort);

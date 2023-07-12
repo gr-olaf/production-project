@@ -1,14 +1,13 @@
+import { getArticleDetailsData } from 'entities/Article';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './ArticleDetailsPageHeader.module.scss';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { RoutePaths } from 'shared/config/routeConfig/routeConfig';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button/Button';
-import { useSelector } from 'react-redux';
-import { getUserAuthData } from 'entities/User';
-import { getArticleDetailsData } from 'entities/Article';
 import { getCanEditArticle } from '../../model/selectors/article';
+import cls from './ArticleDetailsPageHeader.module.scss';
 
 interface ArticleDetailsPageHeaderProps {
 	className?: string;
@@ -17,7 +16,7 @@ interface ArticleDetailsPageHeaderProps {
 export const ArticleDetailsPageHeader = memo(
 	(props: ArticleDetailsPageHeaderProps) => {
 		const { className } = props;
-		const { t } = useTranslation();
+		const { t } = useTranslation('article-details');
 		const navigate = useNavigate();
 		const article = useSelector(getArticleDetailsData);
 		const canEdit = useSelector(getCanEditArticle);

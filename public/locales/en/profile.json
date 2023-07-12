@@ -1,0 +1,19 @@
+{
+	"Произожла ошибка при загрузке профиля": "An error occurred while loading a profile",
+	"Попробуйте обновить страницу": "Try refreshing the page",
+	"Ваше имя": "Your name",
+	"Ваша фамилия": "Your last name",
+	"Ваш возраст": "Your age",
+	"Ваш город": "Your city",
+	"Введите имя пользователя": "Enter the user name",
+	"Введите ссылку на аватар": "Enter avatar link",
+	"Имя и фамилия обязательны": "First and last name required",
+	"Некорректный возраст": "Incorrect age",
+	"Город обязателен": "City required",
+	"Данные не указаны": "Data not specified",
+	"Серверная ошибка при сохранении": "Server error on saving",
+	"Профиль": "Profile",
+	"Редактировать": "Edit",
+	"Отменить": "Cancel",
+	"Сохранить": "Save"
+}

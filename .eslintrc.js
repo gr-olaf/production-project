@@ -16,7 +16,13 @@ module.exports = {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
 	},
-	plugins: ['@typescript-eslint', 'react', 'i18next', 'react-hooks'],
+	plugins: [
+		'@typescript-eslint',
+		'react',
+		'i18next',
+		'react-hooks',
+		'grolaf-plugin',
+	],
 	rules: {
 		indent: ['error', 'tab'],
 		'linebreak-style': [
@@ -38,6 +44,7 @@ module.exports = {
 		'react/display-name': 'off',
 		'no-mixed-spaces-and-tabs': 'off',
 		'no-undef': 'off',
+		'grolaf-plugin/path-checker': 'error',
 	},
 	overrides: [
 		{

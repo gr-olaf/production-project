@@ -7,6 +7,7 @@ import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Text } from 'shared/ui/Text/Text';
 import { Comment } from '../../model/types/comment';
 import cls from './CommentCard.module.scss';
+import { VStack } from 'shared/ui/Stack';
 
 interface CommentCardProps {
 	className?: string;
@@ -36,14 +37,18 @@ export const CommentCard = memo((props: CommentCardProps) => {
 	}
 
 	return (
-		<div className={classNames(cls.CommentCard, {}, [className])}>
+		<VStack
+			gap="8"
+			max
+			className={classNames(cls.CommentCard, {}, [className])}
+		>
 			<AppLink to={RoutePaths.profile + comment.user.id} className={cls.header}>
 				{comment.user.avatar ? (
 					<Avatar size={30} src={comment.user.avatar} />
 				) : null}
 				<Text text={comment.user.username} className={cls.username} />
 			</AppLink>
-			<Text text={comment.text} className={cls.text} />
-		</div>
+			<Text text={comment.text} />
+		</VStack>
 	);
 });

@@ -16,7 +16,6 @@
 	z-index: 10000;
 	border-radius: 12px;
 	box-shadow: 4px 4px 8px var(--listbox-bg);
-	width: 100%;
 }
 
 .item {
@@ -29,4 +28,8 @@
 
 .disabled {
 	opacity: 0.7;
+}
+
+.optionsTop {
+	bottom: 100%;
 }

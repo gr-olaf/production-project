@@ -1,6 +1,6 @@
 import { StateSchema } from 'app/providers/StoreProvider';
 import { getProfileValidateErrors } from './getProfileValidateErrors';
-import { ValidateProfileError } from '../../types/profile';
+import { ValidateProfileError } from '../../types/EditableProfileCardSchema';
 
 const validateErrors = [
 	ValidateProfileError.SERVER_ERROR,

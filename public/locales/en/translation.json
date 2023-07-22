@@ -22,5 +22,7 @@
 	"Создать статью": "Create article",
 	"Обновить страницу": "Refresh page",
 	"Статьи": "Articles",
-	"Профиль": "Profile"
+	"Профиль": "Profile",
+	"Админка": "Admin",
+	"У вас нет доступа к этой странице": "You have no access to this page"
 }

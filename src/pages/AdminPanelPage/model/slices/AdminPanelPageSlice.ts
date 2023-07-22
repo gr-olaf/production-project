@@ -1,7 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AdminPanelPageSchema } from '../types/AdminPanelPageSchema';
 
-const initialState: AdminPanelPageSchema = {};
+const initialState: AdminPanelPageSchema = {
+	id: '1',
+};
 
 export const AdminPanelPageSlice = createSlice({
 	name: 'AdminPanelPage',

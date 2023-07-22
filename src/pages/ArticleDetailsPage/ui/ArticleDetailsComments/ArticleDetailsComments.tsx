@@ -1,6 +1,6 @@
 import { CommentList } from 'entities/Comment';
 import { AddCommentForm } from 'features/AddCommentForm';
-import { memo, useCallback } from 'react';
+import { Suspense, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -12,10 +12,11 @@ import { addCommentForArticle } from '../../model/services/addCommentForArticle/
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
 import { VStack } from 'shared/ui/Stack';
+import { Loader } from 'shared/ui/Loader/Loader';
 
 interface ArticleDetailsCommentsProps {
 	className?: string;
-	id: string;
+	id?: string;
 }
 
 export const ArticleDetailsComments = memo(
@@ -40,7 +41,9 @@ export const ArticleDetailsComments = memo(
 		return (
 			<VStack gap="16" max className={classNames('', {}, [className])}>
 				<Text size={TextSize.L} title={t('Комментарии')} />
-				<AddCommentForm onSendComment={onSendComment} />
+				<Suspense fallback={<Loader />}>
+					<AddCommentForm onSendComment={onSendComment} />
+				</Suspense>
 				<CommentList isLoading={commentsIsLoading} comments={comments} />
 			</VStack>
 		);

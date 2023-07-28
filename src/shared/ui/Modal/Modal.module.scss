@@ -19,6 +19,7 @@
 	background: var(--bg-color);
 	transition: transform 0.3s;
 	transform: scale(0.5);
+	z-index: var(--modal-z-index);
 }
 
 .opened {

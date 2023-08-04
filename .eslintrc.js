@@ -56,7 +56,7 @@ module.exports = {
 		'react/display-name': 'off',
 		'no-mixed-spaces-and-tabs': 'off',
 		'no-undef': 'off',
-		'grolaf-plugin/path-checker': 'error',
+		'grolaf-plugin/path-checker': ['error', { alias: '@' }],
 	},
 	overrides: [
 		{

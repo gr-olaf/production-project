@@ -10,7 +10,7 @@ import {
 	isUserManager,
 	userActions,
 } from '@/entities/User';
-import { RoutePaths } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePaths } from '@/shared/const/router';
 import { useTranslation } from 'react-i18next';
 
 interface AvatarDropdownProps {

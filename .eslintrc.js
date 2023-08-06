@@ -57,6 +57,10 @@ module.exports = {
 		'no-mixed-spaces-and-tabs': 'off',
 		'no-undef': 'off',
 		'grolaf-plugin/path-checker': ['error', { alias: '@' }],
+		'grolaf-plugin/layer-imports': [
+			'error',
+			{ alias: '@', ignoreImportPatterns: ['**/StoreProvider', '**/testing'] },
+		],
 		'grolaf-plugin/public-api-imports': [
 			'error',
 			{

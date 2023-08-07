@@ -22,6 +22,7 @@ module.exports = {
 		'i18next',
 		'react-hooks',
 		'grolaf-plugin',
+		'unused-imports',
 	],
 	rules: {
 		indent: 'off',
@@ -51,6 +52,7 @@ module.exports = {
 				],
 			},
 		],
+		'unused-imports/no-unused-imports': 'error',
 		'react-hooks/rules-of-hooks': 'error',
 		'react-hooks/exhaustive-deps': 'error',
 		'react/display-name': 'off',

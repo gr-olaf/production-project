@@ -2,15 +2,15 @@ import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { NotificationButton } from '@/features/NotificationButton';
-import { memo, useCallback, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
-import { RoutePaths } from '@/shared/const/router';
+import { getRouteArticleCreate } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
 import { Text, TextTheme } from '@/shared/ui/Text';
+import { memo, useCallback, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -39,7 +39,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 					title={t('Grolaf App')}
 					theme={TextTheme.INVERTED}
 				/>
-				<AppLink to={RoutePaths.article_create} theme={AppLinkTheme.SECONDARY}>
+				<AppLink to={getRouteArticleCreate()} theme={AppLinkTheme.SECONDARY}>
 					{t('Создать статью')}
 				</AppLink>
 				<HStack gap="16" className={cls.actions}>

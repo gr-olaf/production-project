@@ -2,7 +2,6 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import ProfilePage from './ProfilePage';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import Avatar from '@/shared/assets/tests/storybook.jpg';
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
 import { Theme } from '@/shared/const/theme';
@@ -28,7 +27,7 @@ Normal.decorators = [
 				age: 25,
 				city: 'City',
 				username: 'Username',
-				avatar: Avatar,
+				avatar: 'assets/storybook.jpg',
 				currency: Currency.RUB,
 				country: Country.Russia,
 			},
@@ -49,7 +48,7 @@ Dark.decorators = [
 				age: 25,
 				city: 'City',
 				username: 'Username',
-				avatar: Avatar,
+				avatar: 'assets/storybook.jpg',
 				currency: Currency.RUB,
 				country: Country.Russia,
 			},

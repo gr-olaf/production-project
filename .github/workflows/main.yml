@@ -9,7 +9,7 @@ permissions:
   pages: write
   id-token: write
 concurrency:
-  group: 'pages'
+  group: "pages"
   cancel-in-progress: true
 jobs:
   build-and-ui-testing:
@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: npm ci --force
+        run: npm install --force
       - name: build production project
         run: npm run build:prod
         if: always()
@@ -48,7 +48,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         if: always()
         with:
-          path: '.loki'
+          path: ".loki"
       - name: Deploy to GitHub Pages
         id: deployment
         if: always()

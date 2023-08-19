@@ -23,7 +23,7 @@ export const createArticle = (article?: Article) => {
 			headers: { Authorization: 'asdf' },
 			body: article ?? defaultArticle,
 		})
-		.then(({ body }) => body);
+		.then((res) => res.body);
 };
 
 export const removeArticle = (articleId: string) => {

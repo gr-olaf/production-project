@@ -4,25 +4,25 @@ import { useCounterValue } from '../model/selectors/getCounterValue/getCounterVa
 import { useCounterActions } from '../model/slice/counterSlice';
 
 export const Counter = () => {
-	const counterValue = useCounterValue();
-	const { increment, decrement } = useCounterActions();
+   const counterValue = useCounterValue();
+   const { increment, decrement } = useCounterActions();
 
-	const handleInc = () => {
-		increment();
-	};
-	const handleDec = () => {
-		decrement();
-	};
+   const handleInc = () => {
+      increment();
+   };
+   const handleDec = () => {
+      decrement();
+   };
 
-	return (
-		<div>
-			<h1 data-testid="value-title">{counterValue}</h1>
-			<Button data-testid="increment-btn" onClick={handleInc}>
-				increment
-			</Button>
-			<Button data-testid="decrement-btn" onClick={handleDec}>
-				decrement
-			</Button>
-		</div>
-	);
+   return (
+      <div>
+         <h1 data-testid="value-title">{counterValue}</h1>
+         <Button data-testid="increment-btn" onClick={handleInc}>
+            increment
+         </Button>
+         <Button data-testid="decrement-btn" onClick={handleDec}>
+            decrement
+         </Button>
+      </div>
+   );
 };

@@ -4,7 +4,7 @@ export { userActions, userReducer } from './model/slice/userSlice';
 export type { UserSchema, User } from './model/types/user';
 export { UserRole } from './model/consts/userConsts';
 export {
-	getUserRoles,
-	isUserAdmin,
-	isUserManager,
+   getUserRoles,
+   isUserAdmin,
+   isUserManager,
 } from './model/selectors/roleSelectors';

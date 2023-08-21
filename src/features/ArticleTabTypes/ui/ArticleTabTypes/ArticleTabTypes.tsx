@@ -5,50 +5,50 @@ import { TabItem, Tabs } from '@/shared/ui/Tabs';
 import { ArticleType } from '@/entities/Article';
 
 interface ArticleTabTypesProps {
-	className?: string;
-	value: ArticleType;
-	onChangeType: (tab: ArticleType) => void;
+   className?: string;
+   value: ArticleType;
+   onChangeType: (tab: ArticleType) => void;
 }
 
 export const ArticleTabTypes = memo((props: ArticleTabTypesProps) => {
-	const { className, value, onChangeType } = props;
-	const { t } = useTranslation('article');
+   const { className, value, onChangeType } = props;
+   const { t } = useTranslation('article');
 
-	const typeTabs = useMemo<TabItem[]>(
-		() => [
-			{
-				value: ArticleType.ALL,
-				content: t('Все статьи'),
-			},
-			{
-				value: ArticleType.IT,
-				content: t('Айти'),
-			},
-			{
-				value: ArticleType.SCIENCE,
-				content: t('Наука'),
-			},
-			{
-				value: ArticleType.ECONOMICS,
-				content: t('Экономика'),
-			},
-		],
-		[t]
-	);
+   const typeTabs = useMemo<TabItem[]>(
+      () => [
+         {
+            value: ArticleType.ALL,
+            content: t('Все статьи'),
+         },
+         {
+            value: ArticleType.IT,
+            content: t('Айти'),
+         },
+         {
+            value: ArticleType.SCIENCE,
+            content: t('Наука'),
+         },
+         {
+            value: ArticleType.ECONOMICS,
+            content: t('Экономика'),
+         },
+      ],
+      [t],
+   );
 
-	const onTabClick = useCallback(
-		(tab: TabItem) => {
-			onChangeType(tab.value as ArticleType);
-		},
-		[onChangeType]
-	);
+   const onTabClick = useCallback(
+      (tab: TabItem) => {
+         onChangeType(tab.value as ArticleType);
+      },
+      [onChangeType],
+   );
 
-	return (
-		<Tabs
-			tabs={typeTabs}
-			value={value}
-			onTabClick={onTabClick}
-			className={classNames('', {}, [className])}
-		></Tabs>
-	);
+   return (
+      <Tabs
+         tabs={typeTabs}
+         value={value}
+         onTabClick={onTabClick}
+         className={classNames('', {}, [className])}
+      ></Tabs>
+   );
 });

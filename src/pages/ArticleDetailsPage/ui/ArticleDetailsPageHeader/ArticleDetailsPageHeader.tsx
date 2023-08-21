@@ -10,34 +10,38 @@ import { useNavigate } from 'react-router-dom';
 import { getCanEditArticle } from '../../model/selectors/article';
 
 interface ArticleDetailsPageHeaderProps {
-	className?: string;
+   className?: string;
 }
 
 export const ArticleDetailsPageHeader = memo(
-	(props: ArticleDetailsPageHeaderProps) => {
-		const { className } = props;
-		const { t } = useTranslation('article-details');
-		const navigate = useNavigate();
-		const article = useSelector(getArticleDetailsData);
-		const canEdit = useSelector(getCanEditArticle);
+   (props: ArticleDetailsPageHeaderProps) => {
+      const { className } = props;
+      const { t } = useTranslation('article-details');
+      const navigate = useNavigate();
+      const article = useSelector(getArticleDetailsData);
+      const canEdit = useSelector(getCanEditArticle);
 
-		const onBackToList = useCallback(() => {
-			navigate(getRouteArticles());
-		}, [navigate]);
+      const onBackToList = useCallback(() => {
+         navigate(getRouteArticles());
+      }, [navigate]);
 
-		const onEditArticle = useCallback(() => {
-			if (article) {
-				navigate(getRouteArticleEdit(article.id));
-			}
-		}, [article, navigate]);
+      const onEditArticle = useCallback(() => {
+         if (article) {
+            navigate(getRouteArticleEdit(article.id));
+         }
+      }, [article, navigate]);
 
-		return (
-			<HStack justify="between" max className={classNames('', {}, [className])}>
-				<Button onClick={onBackToList}>{t('Назад к списку')}</Button>
-				{canEdit && (
-					<Button onClick={onEditArticle}>{t('Редактировать')}</Button>
-				)}
-			</HStack>
-		);
-	}
+      return (
+         <HStack
+            justify="between"
+            max
+            className={classNames('', {}, [className])}
+         >
+            <Button onClick={onBackToList}>{t('Назад к списку')}</Button>
+            {canEdit && (
+               <Button onClick={onEditArticle}>{t('Редактировать')}</Button>
+            )}
+         </HStack>
+      );
+   },
 );

@@ -10,21 +10,21 @@ import '@/shared/config/i18n/i18n';
 const container = document.getElementById('root');
 
 if (!container) {
-	throw new Error(
-		'Root container was not found. It was not possible to mount the React application.'
-	);
+   throw new Error(
+      'Root container was not found. It was not possible to mount the React application.',
+   );
 }
 
 const root = createRoot(container);
 
 root.render(
-	<BrowserRouter>
-		<StoreProvider>
-			<ErrorBoundary>
-				<ThemeProvider>
-					<App />
-				</ThemeProvider>
-			</ErrorBoundary>
-		</StoreProvider>
-	</BrowserRouter>
+   <BrowserRouter>
+      <StoreProvider>
+         <ErrorBoundary>
+            <ThemeProvider>
+               <App />
+            </ThemeProvider>
+         </ErrorBoundary>
+      </StoreProvider>
+   </BrowserRouter>,
 );

@@ -4,32 +4,32 @@ import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById'
 import { Article } from '../types/article';
 
 const initialState: ArticleDetailsSchema = {
-	data: undefined,
-	isLoading: false,
-	error: undefined,
+   data: undefined,
+   isLoading: false,
+   error: undefined,
 };
 
 export const articleDetailsSlice = createSlice({
-	name: 'articleDetails',
-	initialState,
-	reducers: {},
-	extraReducers: (builder) => {
-		builder.addCase(fetchArticleById.pending, (state) => {
-			state.isLoading = true;
-			state.error = undefined;
-		});
-		builder.addCase(
-			fetchArticleById.fulfilled,
-			(state, action: PayloadAction<Article>) => {
-				state.isLoading = false;
-				state.data = action.payload;
-			}
-		);
-		builder.addCase(fetchArticleById.rejected, (state, action) => {
-			state.isLoading = false;
-			state.error = action.payload;
-		});
-	},
+   name: 'articleDetails',
+   initialState,
+   reducers: {},
+   extraReducers: (builder) => {
+      builder.addCase(fetchArticleById.pending, (state) => {
+         state.isLoading = true;
+         state.error = undefined;
+      });
+      builder.addCase(
+         fetchArticleById.fulfilled,
+         (state, action: PayloadAction<Article>) => {
+            state.isLoading = false;
+            state.data = action.payload;
+         },
+      );
+      builder.addCase(fetchArticleById.rejected, (state, action) => {
+         state.isLoading = false;
+         state.error = action.payload;
+      });
+   },
 });
 
 export const { actions: articleDetailsActions } = articleDetailsSlice;

@@ -4,18 +4,18 @@ import { useTranslation } from 'react-i18next';
 import { Page } from '@/widgets/Page';
 
 interface NotFoundPageProps {
-	className?: string;
+   className?: string;
 }
 
 export const NotFoundPage = ({ className }: NotFoundPageProps) => {
-	const { t } = useTranslation();
+   const { t } = useTranslation();
 
-	return (
-		<Page
-			className={classNames(cls.NotFoundPage, {}, [className])}
-			data-testid="NotFoundPage"
-		>
-			{t('Страница не найдена')}
-		</Page>
-	);
+   return (
+      <Page
+         className={classNames(cls.NotFoundPage, {}, [className])}
+         data-testid="NotFoundPage"
+      >
+         {t('Страница не найдена')}
+      </Page>
+   );
 };

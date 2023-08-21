@@ -4,47 +4,47 @@ import { Country } from '@/entities/Country';
 import { ValidateProfileError } from '../../consts/consts';
 
 const data = {
-	first: 'Firstname',
-	lastname: 'Lastname',
-	age: 25,
-	city: 'City',
-	username: 'Username',
-	currency: Currency.RUB,
-	country: Country.Russia,
+   first: 'Firstname',
+   lastname: 'Lastname',
+   age: 25,
+   city: 'City',
+   username: 'Username',
+   currency: Currency.RUB,
+   country: Country.Russia,
 };
 
 describe('validateProfileData.test', () => {
-	test('success', async () => {
-		const result = validateProfileData(data);
+   test('success', async () => {
+      const result = validateProfileData(data);
 
-		expect(result).toEqual([]);
-	});
+      expect(result).toEqual([]);
+   });
 
-	test('without firstname and lastname', async () => {
-		const result = validateProfileData({ ...data, first: '', lastname: '' });
+   test('without firstname and lastname', async () => {
+      const result = validateProfileData({ ...data, first: '', lastname: '' });
 
-		expect(result).toEqual([ValidateProfileError.INCORRECT_USER_DATA]);
-	});
+      expect(result).toEqual([ValidateProfileError.INCORRECT_USER_DATA]);
+   });
 
-	test('incorrect age', async () => {
-		const result = validateProfileData({ ...data, age: undefined });
+   test('incorrect age', async () => {
+      const result = validateProfileData({ ...data, age: undefined });
 
-		expect(result).toEqual([ValidateProfileError.INCORRECT_AGE]);
-	});
+      expect(result).toEqual([ValidateProfileError.INCORRECT_AGE]);
+   });
 
-	test('incorrect city', async () => {
-		const result = validateProfileData({ ...data, city: '' });
+   test('incorrect city', async () => {
+      const result = validateProfileData({ ...data, city: '' });
 
-		expect(result).toEqual([ValidateProfileError.INCORRECT_CITY]);
-	});
+      expect(result).toEqual([ValidateProfileError.INCORRECT_CITY]);
+   });
 
-	test('incorrect all', async () => {
-		const result = validateProfileData({});
+   test('incorrect all', async () => {
+      const result = validateProfileData({});
 
-		expect(result).toEqual([
-			ValidateProfileError.INCORRECT_USER_DATA,
-			ValidateProfileError.INCORRECT_AGE,
-			ValidateProfileError.INCORRECT_CITY,
-		]);
-	});
+      expect(result).toEqual([
+         ValidateProfileError.INCORRECT_USER_DATA,
+         ValidateProfileError.INCORRECT_AGE,
+         ValidateProfileError.INCORRECT_CITY,
+      ]);
+   });
 });

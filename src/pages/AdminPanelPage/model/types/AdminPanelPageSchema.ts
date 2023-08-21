@@ -1,3 +1,3 @@
 export interface AdminPanelPageSchema {
-	id: string;
+   id: string;
 }

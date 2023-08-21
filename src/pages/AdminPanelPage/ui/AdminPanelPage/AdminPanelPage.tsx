@@ -5,21 +5,21 @@ import { memo } from 'react';
 import { Page } from '@/widgets/Page';
 
 interface AdminPanelPageProps {
-	className?: string;
+   className?: string;
 }
 
 const AdminPanelPage = memo((props: AdminPanelPageProps) => {
-	const { className } = props;
-	const { t } = useTranslation('admin-panel');
+   const { className } = props;
+   const { t } = useTranslation('admin-panel');
 
-	return (
-		<Page
-			className={classNames(cls.AdminPanelPage, {}, [className])}
-			data-testid="AdminPanelPage"
-		>
-			{t('Админ панель')}
-		</Page>
-	);
+   return (
+      <Page
+         className={classNames(cls.AdminPanelPage, {}, [className])}
+         data-testid="AdminPanelPage"
+      >
+         {t('Админ панель')}
+      </Page>
+   );
 });
 
 export default AdminPanelPage;

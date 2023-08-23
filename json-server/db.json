@@ -575,6 +575,10 @@
          "username": "admin",
          "password": "123",
          "roles": ["ADMIN"],
+         "features": {
+            "isArticleRatingEnabled": true,
+            "isCounterEnabled": true
+         },
          "avatar": "https://chaoscode.io/attachments/hacker-logo-png.2884/"
       },
       {
@@ -582,6 +586,10 @@
          "username": "user",
          "password": "123",
          "roles": ["USER"],
+         "features": {
+            "isArticleRatingEnabled": false,
+            "isCounterEnabled": false
+         },
          "avatar": "https://rg.ru/uploads/images/125/44/18/11111111.jpg"
       },
       {
@@ -589,6 +597,10 @@
          "username": "manager",
          "password": "123",
          "roles": ["MANAGER"],
+         "features": {
+            "isArticleRatingEnabled": false,
+            "isCounterEnabled": true
+         },
          "avatar": "https://media.tproger.ru/uploads/2022/12/5074930_businessman_control_management_manager_resource_icon-cover-icon-1-original.png"
       },
       {
@@ -596,6 +608,10 @@
          "username": "testuser",
          "password": "123",
          "roles": ["ADMIN"],
+         "features": {
+            "isArticleRatingEnabled": true,
+            "isCounterEnabled": true
+         },
          "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
       }
    ],

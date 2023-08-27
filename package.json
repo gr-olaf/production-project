@@ -28,7 +28,8 @@
       "storybook:build": "build-storybook -c ./config/storybook",
       "prepare": "husky install",
       "generate:slice": "node ./scripts/createSlice/index.js",
-      "postinstall": "node ./scripts/clear-cache.ts"
+      "postinstall": "node ./scripts/clear-cache.ts",
+      "remove-feature": "npx ts-node ./scripts/remove-feature.ts"
    },
    "keywords": [],
    "author": "",

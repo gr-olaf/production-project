@@ -47,6 +47,7 @@ module.exports = {
                'gap',
                'role',
                'border',
+               'feature',
             ],
          },
       ],

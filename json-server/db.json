@@ -641,7 +641,7 @@
       },
       "avatar": "https://rg.ru/uploads/images/125/44/18/11111111.jpg",
       "jsonSettings": {
-        "theme": "app_light_theme",
+        "theme": "app_dark_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false,
         "isArticlesPageWasOpened": true

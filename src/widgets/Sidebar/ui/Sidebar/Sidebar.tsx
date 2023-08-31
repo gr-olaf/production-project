@@ -9,7 +9,7 @@ import { VStack } from '@/shared/ui/Stack';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { LangSwitcher } from '@/features/LangSwitcher';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { AppLogo } from '@/shared/ui/deprecated/AppLogo';
+import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
 
 interface SidebarProps {
    className?: string;
@@ -41,7 +41,10 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
                   [className],
                )}
             >
-               <AppLogo className={cls.appLogo} />
+               <AppLogo size={collapsed ? 30 : 50} className={cls.appLogo} />
+               <VStack role="navigation" gap="8" className={cls.items}>
+                  {itemsList}
+               </VStack>
             </aside>
          }
          off={

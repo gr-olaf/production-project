@@ -35,13 +35,14 @@ export const SidebarItem = memo((props: SidebarItemProps) => {
             <AppLink
                to={item.path}
                className={classNames(
-                  cls.item,
-                  { [cls.collapsed]: collapsed },
+                  cls.itemRedesigned,
+                  { [cls.collapsedRedesigned]: collapsed },
                   [],
                )}
+               activeClassName={cls.active}
             >
                <Icon Svg={item.icon} />
-               <span className={cls.link}>{t(item.text)}</span>
+               {!collapsed && <span className={cls.link}>{t(item.text)}</span>}
             </AppLink>
          }
          off={

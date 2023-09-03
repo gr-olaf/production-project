@@ -1,9 +1,10 @@
 import { MutableRefObject, useEffect } from 'react';
+import { toggleFeatures } from '../../features';
 
 export interface UseInfiniteScrollOptions {
    callback?: () => void;
    triggerRef: MutableRefObject<HTMLElement>;
-   wrapperRef: MutableRefObject<HTMLElement>;
+   wrapperRef?: MutableRefObject<HTMLElement>;
 }
 
 export function useInfiniteScroll({
@@ -16,7 +17,11 @@ export function useInfiniteScroll({
 
       if (callback) {
          const options = {
-            root: wrapperRef.current,
+            root: toggleFeatures({
+               name: 'isAppRedesigned',
+               on: () => undefined,
+               off: () => wrapperRef?.current,
+            }),
             rootMargin: '0px',
             threshold: 1.0,
          };

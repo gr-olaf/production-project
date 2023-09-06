@@ -16,5 +16,11 @@
    "Редактировать": "Edit",
    "Отменить": "Cancel",
    "Сохранить": "Save",
-   "Профиль не найден": "The profile was not found"
+   "Профиль не найден": "The profile was not found",
+   "Имя": "Name",
+   "Фамилия": "Surname",
+   "Возраст": "Age",
+   "Город": "City",
+   "Имя пользователя": "Username",
+   "Ссылка на аватар": "Link to the avatar"
 }

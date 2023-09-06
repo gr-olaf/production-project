@@ -46,8 +46,8 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
    const optionsClasses = [mapDirectionClass[direction], popupCls.menu];
 
    return (
-      <HStack gap="4">
-         {label && <span>{`${label}>`}</span>}
+      <HStack gap="8">
+         {label && <span>{`${label}`}</span>}
          <HListBox
             as={'div'}
             disabled={readonly}

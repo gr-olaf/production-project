@@ -1,7 +1,6 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './ProfileCardRedesigned.module.scss';
 import { ProfileCardProps } from '../ProfileCard/ProfileCard';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Card } from '@/shared/ui/redesigned/Card';
@@ -61,7 +60,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
          <HStack
             justify="center"
             max
-            className={classNames(cls.ProfileCardRedesigned, {}, [className])}
+            className={classNames('', {}, [className])}
          >
             <Text
                variant="error"
@@ -74,11 +73,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
    }
 
    return (
-      <Card
-         padding="24"
-         max
-         className={classNames(cls.ProfileCardRedesigned, {}, [className])}
-      >
+      <Card padding="24" max className={classNames('', {}, [className])}>
          <VStack gap="32">
             {data?.avatar && (
                <HStack justify="center" max>

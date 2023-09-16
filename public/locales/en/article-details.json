@@ -7,5 +7,7 @@
    "Редактировать": "Edit",
    "Оцените статью": "Rate article",
    "Оставьте свой отзыв о статье, это поможет повысить качество": "Leave your feedback about the article, it will help improve the quality",
-   "Оценка статей скоро появится": "Assessment of articles will soon appear"
+   "Оценка статей скоро появится": "Assessment of articles will soon appear",
+   "{{count}} просмотров_other": "{{count}} views",
+   "{{count}} просмотров_one": "{{count}} view"
 }

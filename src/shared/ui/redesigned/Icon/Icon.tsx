@@ -23,7 +23,26 @@ type IconProps = NonClickabaleIconProps | ClickabaleIconProps;
 export const Icon = memo((props: IconProps) => {
    const { className, Svg, width = 32, height = 32, ...otherProps } = props;
 
-   const icon = (
+   if (props.clickable) {
+      return (
+         <button
+            type="button"
+            className={classNames(cls.button, {}, [className])}
+            onClick={props.onClick}
+            style={{ width, height }}
+         >
+            <Svg
+               className={cls.Icon}
+               {...otherProps}
+               width={width}
+               height={height}
+               onClick={undefined}
+            />
+         </button>
+      );
+   }
+
+   return (
       <Svg
          className={classNames(cls.Icon, {}, [className])}
          {...otherProps}
@@ -32,19 +51,4 @@ export const Icon = memo((props: IconProps) => {
          onClick={undefined}
       />
    );
-
-   if (props.clickable) {
-      return (
-         <button
-            type="button"
-            className={cls.button}
-            onClick={props.onClick}
-            style={{ width, height }}
-         >
-            {icon}
-         </button>
-      );
-   }
-
-   return icon;
 });

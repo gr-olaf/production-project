@@ -54,7 +54,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
    return (
       <DynamicModuleLoader reducers={initialReducers}>
-         <Card padding="24" border="round" max>
+         <Card padding="24" border="partial" max>
             <ToggleFeatures
                feature="isAppRedesigned"
                on={

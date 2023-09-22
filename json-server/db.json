@@ -622,7 +622,7 @@
       },
       "avatar": "https://chaoscode.io/attachments/hacker-logo-png.2884/",
       "jsonSettings": {
-        "theme": "app_dark_theme",
+        "theme": "app_light_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false,
         "isArticlesPageWasOpened": true

@@ -22,7 +22,7 @@ export const AddtionalInfoContainer = memo(() => {
    }
 
    return (
-      <Card className={cls.card} padding="24" border="round">
+      <Card className={cls.card} padding="24" border="partial">
          <ArticleAdditionalInfo
             author={article.user}
             createdAt={article.createdAt}

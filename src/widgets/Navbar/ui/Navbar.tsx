@@ -5,14 +5,18 @@ import { NotificationButton } from '@/features/NotificationButton';
 import { getRouteArticleCreate } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from '@/shared/ui/deprecated/AppLink';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import {
+   Button as ButtonDeprecated,
+   ButtonTheme,
+} from '@/shared/ui/deprecated/Button';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import cls from './Navbar.module.scss';
-import { ToggleFeatures } from '@/shared/lib/features';
+import { ToggleFeatures, toggleFeatures } from '@/shared/lib/features';
+import { Button } from '@/shared/ui/redesigned/Button';
 
 interface NavbarProps {
    className?: string;
@@ -32,14 +36,18 @@ export const Navbar = memo(({ className }: NavbarProps) => {
       setIsAuthModal(true);
    }, []);
 
+   const mainClass = toggleFeatures({
+      name: 'isAppRedesigned',
+      on: () => cls.NavbarRedesigned,
+      off: () => cls.Navbar,
+   });
+
    if (authData) {
       return (
          <ToggleFeatures
             feature="isAppRedesigned"
             on={
-               <header
-                  className={classNames(cls.NavbarRedesigned, {}, [className])}
-               >
+               <header className={classNames(mainClass, {}, [className])}>
                   <HStack gap="16" className={cls.actions}>
                      <NotificationButton />
                      <AvatarDropdown />
@@ -47,7 +55,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                </header>
             }
             off={
-               <header className={classNames(cls.Navbar, {}, [className])}>
+               <header className={classNames(mainClass, {}, [className])}>
                   <Text
                      className={cls.appName}
                      title={t('Grolaf App')}
@@ -70,12 +78,28 @@ export const Navbar = memo(({ className }: NavbarProps) => {
    }
 
    return (
-      <header className={classNames(cls.Navbar, {}, [className])}>
-         <div className={cls.links}>
-            <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onShowModal}>
-               {t('Войти')}
-            </Button>
-         </div>
+      <header className={classNames(mainClass, {}, [className])}>
+         <ToggleFeatures
+            feature="isAppRedesigned"
+            on={
+               <div className={cls.links}>
+                  <Button variant="clear" onClick={onShowModal}>
+                     {t('Войти')}
+                  </Button>
+               </div>
+            }
+            off={
+               <div className={cls.links}>
+                  <ButtonDeprecated
+                     theme={ButtonTheme.CLEAR_INVERTED}
+                     onClick={onShowModal}
+                  >
+                     {t('Войти')}
+                  </ButtonDeprecated>
+               </div>
+            }
+         />
+
          {isAuthModal && (
             <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
          )}

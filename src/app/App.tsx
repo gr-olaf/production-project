@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 import { AppRouter } from './providers/router';
 import { PageLoader } from '@/widgets/PageLoader';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { MainLayout } from '@/shared/layouts';
+import { AppLoaderLayout, MainLayout } from '@/shared/layouts';
 
 export const App = () => {
    const { theme } = useTheme();
@@ -21,7 +21,20 @@ export const App = () => {
    }, [dispatch]);
 
    if (!inited) {
-      return <PageLoader />;
+      return (
+         <ToggleFeatures
+            feature="isAppRedesigned"
+            on={
+               <div
+                  id="app"
+                  className={classNames('app_redesigned', {}, [theme])}
+               >
+                  <AppLoaderLayout />
+               </div>
+            }
+            off={<PageLoader />}
+         />
+      );
    }
 
    return (

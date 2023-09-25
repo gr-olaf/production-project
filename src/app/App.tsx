@@ -1,20 +1,22 @@
 import { getUserInited, initAuthData } from '@/entities/User';
+import { AppLoaderLayout, MainLayout } from '@/shared/layouts';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import useTheme from '@/shared/lib/hooks/useTheme/useTheme';
 import { Navbar } from '@/widgets/Navbar';
+import { PageLoader } from '@/widgets/PageLoader';
 import { Sidebar } from '@/widgets/Sidebar';
 import { Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useAppToolbar } from './lib/useAppToolbar';
 import { AppRouter } from './providers/router';
-import { PageLoader } from '@/widgets/PageLoader';
-import { ToggleFeatures } from '@/shared/lib/features';
-import { AppLoaderLayout, MainLayout } from '@/shared/layouts';
 
 export const App = () => {
    const { theme } = useTheme();
    const dispatch = useAppDispatch();
    const inited = useSelector(getUserInited);
+   const toolbar = useAppToolbar();
 
    useEffect(() => {
       dispatch(initAuthData());
@@ -47,6 +49,7 @@ export const App = () => {
                      header={<Navbar />}
                      content={<AppRouter />}
                      sidebar={<Sidebar />}
+                     toolbar={toolbar}
                   />
                </Suspense>
             </div>

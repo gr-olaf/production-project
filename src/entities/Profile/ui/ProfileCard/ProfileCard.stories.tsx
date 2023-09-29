@@ -2,6 +2,8 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ProfileCard } from './ProfileCard';
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
+import { FeatureFlagDecorator } from '@/shared/config/storybook/FeatureFlagDecorator/FeatureFlagDecorator';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 export default {
    title: 'entities/ProfileCard',
@@ -15,8 +17,7 @@ const Template: ComponentStory<typeof ProfileCard> = (args) => (
    <ProfileCard {...args} />
 );
 
-export const Primary = Template.bind({});
-Primary.args = {
+const primaryArgs = {
    data: {
       first: 'Firstname',
       lastname: 'Lastname',
@@ -29,6 +30,16 @@ Primary.args = {
    },
    readOnly: true,
 };
+
+export const Primary = Template.bind({});
+Primary.args = primaryArgs;
+
+export const PrimaryRedesigned = Template.bind({});
+PrimaryRedesigned.args = primaryArgs;
+PrimaryRedesigned.decorators = [
+   FeatureFlagDecorator({ isAppRedesigned: true }),
+   NewDesignDecorator,
+];
 
 export const WithError = Template.bind({});
 WithError.args = {

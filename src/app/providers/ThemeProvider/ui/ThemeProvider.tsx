@@ -1,4 +1,3 @@
-import { useJsonSettings } from '@/entities/User';
 import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localStorage';
 import { Theme } from '@/shared/const/theme';
 import {
@@ -16,7 +15,6 @@ const fallbackTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme;
 
 const ThemeProvider = (props: ThemeProviderProps) => {
    const { children, initialTheme } = props;
-   const { theme: defaultTheme } = useJsonSettings();
    const [isThemeInited, setIsThemeInited] = useState(false);
 
    const [theme, setTheme] = useState<Theme>(
@@ -24,11 +22,11 @@ const ThemeProvider = (props: ThemeProviderProps) => {
    );
 
    useEffect(() => {
-      if (!isThemeInited && defaultTheme) {
-         setTheme(defaultTheme);
+      if (!isThemeInited && initialTheme) {
+         setTheme(initialTheme);
          setIsThemeInited(true);
       }
-   }, [defaultTheme, isThemeInited]);
+   }, [initialTheme, isThemeInited]);
 
    useEffect(() => {
       document.body.className = theme;
